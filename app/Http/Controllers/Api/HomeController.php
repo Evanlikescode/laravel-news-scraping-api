@@ -4,14 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Goutte\Client;
 
 class HomeController extends Controller
 {
-
-    public function __construct(){
-        $this->client = new Client();
-    }
 
     /**
      * Display a listing of the resource.
@@ -20,14 +15,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $crawler = $this->client->request('GET', 'https://news.detik.com/');
-        $data = $crawler->filter('h2 > a');
-        $obj = $data->each(function ($node) {
-            return $node->text();
-        });
-        return response([
-            "data" => $obj
-        ]);
+        try{
+            $dataSource = [
+                'webSource' => "https://news.detik.com/",
+                'headlineSource' => ".media__title > a"
+            ];
+            return $this->scraper->getHeadline($dataSource);
+        }catch(\Exception $e){
+            return $e;
+        }
         
 
 
@@ -63,9 +59,8 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
     }
 
     /**
