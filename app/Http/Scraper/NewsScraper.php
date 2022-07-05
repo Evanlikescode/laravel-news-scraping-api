@@ -19,9 +19,7 @@ class NewsScraper{
             ];
             return $response;
         });
-        return response([
-            "Headline Updated" => $obj
-        ]);
+        return $obj;
     }
 
 

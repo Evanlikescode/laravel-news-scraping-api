@@ -16,11 +16,17 @@ class HomeController extends Controller
     public function index()
     {
         try{
+            // $dataSource = [
+            //     'webSource' => "https://www.kompas.com/",
+            //     'headlineSource' => ".article__title > a"
+            // ];
             $dataSource = [
                 'webSource' => "https://news.detik.com/",
                 'headlineSource' => ".media__title > a"
             ];
-            return $this->scraper->getHeadline($dataSource);
+            $data = $this->scraper->getHeadline($dataSource); 
+            return $this->db->store($data);
+            // dd($data);
         }catch(\Exception $e){
             return $e;
         }
