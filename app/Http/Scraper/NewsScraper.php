@@ -6,7 +6,7 @@ use Symfony\Component\HttpClient\HttpClient;
 class NewsScraper{
 
     public function __construct(){
-        $this->client = new Client(HttpClient::create(['timeout' => 60]));
+        $this->client = new Client(HttpClient::create(['timeout' => 120]));
     }
 
     public function getHeadline($sourceData){

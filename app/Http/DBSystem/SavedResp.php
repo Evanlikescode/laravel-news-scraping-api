@@ -1,9 +1,13 @@
 <?php
 namespace App\Http\DBSystem;
+use Illuminate\Support\Facades\Redis;
 
 class SavedResp{
 
-    public function store($data){
+    public function headlineStore($data, $cacheKey){
+        if($newData = Redis::get("laravel_database_$cacheKey")){
+            return json_decode($newData);
+        }
         $newData = [];
         foreach($data as $x){
             if($x['Link'] != "#" && $x['Link'] != null){
@@ -16,6 +20,7 @@ class SavedResp{
             }
             
         }
+        Redis::set($cacheKey,json_encode($newData), 'EX', 60);
         return $newData;
         
 

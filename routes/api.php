@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\Api\HeadlineController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,5 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/{id}', [HomeController::class, 'show']);
+Route::prefix('headline')->group(function (){
+    Route::get('/detik', [HeadlineController::class, 'detik']);
+    Route::get('/kompas', [HeadlineController::class, 'kompas']);
+});

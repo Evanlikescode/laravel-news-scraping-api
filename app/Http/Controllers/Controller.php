@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Http\Scraper\NewsScraper;
 use App\Http\DBSystem\SavedResp;
+use App\Http\Responses\ApiResponse;
 
 class Controller extends BaseController
 {
@@ -16,6 +17,7 @@ class Controller extends BaseController
     public function __construct()
     {
         $this->scraper = new NewsScraper();
-        $this->db = new SavedResp();
+        $this->cache = new SavedResp();
+        $this->response = new ApiResponse();
     }
 }
