@@ -5,25 +5,19 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HeadlineController extends Controller
+class SearchController extends Controller
 {
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function detik()
+    
+    public function detik($query)
     {
         try{
             $dataSource = [
-                'webSource' => "https://news.detik.com/",
-                'headlineSource' => ".media__title > a"
+                'webSource' => "https://www.detik.com/search/searchall?query=$query&siteid=2",
+                'searchSource' => "article"
             ];
-            $source = $this->scraper->getHeadline($dataSource); 
-            $finalData = $this->cache->headlineStore($source, 'detik_headline');
-            return $this->response->success($finalData, 'response_detik', 'fetch');
-
+            $source = $this->scraper->getSearch($dataSource); 
+            $finalData = $this->cache->searchStore($source, "detik_search_$query");
+            return $this->response->success($source, "response_detik_$query", 'fetch');
         }catch(\Exception $e){
             return $this->response->failed($e);
         }
@@ -33,11 +27,6 @@ class HeadlineController extends Controller
         
     }
 
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function kompas()
     {
         try{
@@ -51,10 +40,5 @@ class HeadlineController extends Controller
         }catch(\Exception $e){
             return $this->response->failed($e);
         }
-        
-
-
-        
     }
-
 }

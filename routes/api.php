@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\HeadlineController;
+use App\Http\Controllers\Api\SearchController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,5 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('headline')->group(function (){
     Route::get('/detik', [HeadlineController::class, 'detik']);
+    Route::get('/kompas', [HeadlineController::class, 'kompas']);
+});
+
+Route::prefix('search')->group(function (){
+    Route::get('/detik/{query}', [SearchController::class, 'detik']);
     Route::get('/kompas', [HeadlineController::class, 'kompas']);
 });
