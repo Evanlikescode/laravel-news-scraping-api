@@ -20,7 +20,7 @@ class SavedResp{
             }
             
         }
-        Redis::set($cacheKey,json_encode($newData), 'EX', 60);
+        Redis::set($cacheKey,json_encode($newData), 'EX', 120);
         return $newData;
         
 

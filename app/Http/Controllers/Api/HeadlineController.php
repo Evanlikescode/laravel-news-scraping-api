@@ -18,11 +18,11 @@ class HeadlineController extends Controller
         try{
             $dataSource = [
                 'webSource' => "https://news.detik.com/",
-                'headlineSource' => ".media__title > a"
+                'headlineSource' => ".media__titles > a"
             ];
             $source = $this->scraper->getHeadline($dataSource); 
             $finalData = $this->cache->headlineStore($source, 'detik_headline');
-            return $this->response->success($finalData, 'response_detik');
+            return $this->response->success($finalData, 'response_detik', 'fetch');
 
         }catch(\Exception $e){
             return $this->response->failed($e);
@@ -47,7 +47,7 @@ class HeadlineController extends Controller
             ];
             $source = $this->scraper->getHeadline($dataSource); 
             $finalData = $this->cache->headlineStore($source, 'kompas_headline');
-            return $this->response->success($finalData, 'response_kompas');
+            return $this->response->success($finalData, 'response_kompas', 'fetch');
         }catch(\Exception $e){
             return $this->response->failed($e);
         }
