@@ -13,7 +13,7 @@ class SavedResp{
             if($x['Link'] != "#" && $x['Link'] != null){
                 array_push(
                     $newData,array(
-                    "Headline" => $x['Headline'],
+                    "Headline" => $x['Title'],
                     "Link" => $x['Link']
                     )
                 );
