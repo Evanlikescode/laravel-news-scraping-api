@@ -17,8 +17,28 @@ class LandingController extends Controller
     {
         try{
             $dataSource = [
-                'getHeadline' => '/api/headline/{detik or kompas}',
-                'searchNews' => '/api/search/{detik or kompas}/{keyword}',
+                'newsScraping' => [
+                    'detik' => [
+                        'getHeadlineGeneral' => '/api/headline/detik-news',
+                        'getHeadlineFinance' => '/api/headline/detik-finance',
+                        'getHeadlineHot' => '/api/headline/detik-hot',
+                        'getHeadlineInet' => '/api/headline/detik-inet',
+                        'getHeadlineSport' => '/api/headline/detik-sport',
+                        'getHeadlineOto' => '/api/headline/detik-oto',
+                        'getHeadlineTravel' => '/api/headline/detik-travel', 
+                        'getHeadlineFood' => '/api/headline/detik-food',
+                        'getHeadlineHealth' => '/api/headline/detik-health', 
+                        'getHeadlineWolipop' => '/api/headline/detik-wolipop', 
+                        'getHeadline20Detik' => '/api/headline/detik-20',
+                        'searchNews'  => '/api/search/detik/{query}'
+                    ],
+                    'kompas' => [
+                        'getHeadline' => '/api/headline/kompas',
+                        'searchNews'  => null
+                    ],
+                ]
+                
+                
             ];
             return $this->response->success($dataSource, 'landing_page', 'fetch');
 
