@@ -19,7 +19,7 @@ class LandingController extends Controller
             $dataSource = [
                 'newsScraping' => [
                     'detik' => [
-                        'getHeadlineGeneral' => '/api/headline/detik-news',
+                        'getHeadlineNews' => '/api/headline/detik-news',
                         'getHeadlineFinance' => '/api/headline/detik-finance',
                         'getHeadlineHot' => '/api/headline/detik-hot',
                         'getHeadlineInet' => '/api/headline/detik-inet',
