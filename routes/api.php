@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\HeadlineController;
+use App\Http\Controllers\Api\Headline\DetikHeadlineController;
+use App\Http\Controllers\Api\Headline\KompasHeadlineController;
 use App\Http\Controllers\Api\SearchController;
 use App\Http\Controllers\Api\LandingController;
 /*
@@ -24,37 +25,37 @@ Route::get('/', [LandingController::class, 'landing']);
 
 Route::prefix('headline')->group(function (){
     Route::prefix('detik')->group(function (){
-        Route::get('/news', [HeadlineController::class, 'detikNews']);
-        Route::get('/finance', [HeadlineController::class, 'detikFinance']);
-        Route::get('/hot', [HeadlineController::class, 'detikHot']);
-        Route::get('/inet', [HeadlineController::class, 'detikInet']);
-        Route::get('/sport', [HeadlineController::class, 'detikSport']);
-        Route::get('/oto', [HeadlineController::class, 'detikOto']);
-        Route::get('/travel', [HeadlineController::class, 'detikTravel']);
-        Route::get('/food', [HeadlineController::class, 'detikFood']);
-        Route::get('/health', [HeadlineController::class, 'detikHealth']);
-        Route::get('/wolipop', [HeadlineController::class, 'detikWolipop']);
-        Route::get('/20', [HeadlineController::class, 'detik20']);
+        Route::get('/news', [DetikHeadlineController::class, 'detikNews']);
+        Route::get('/finance', [DetikHeadlineController::class, 'detikFinance']);
+        Route::get('/hot', [DetikHeadlineController::class, 'detikHot']);
+        Route::get('/inet', [DetikHeadlineController::class, 'detikInet']);
+        Route::get('/sport', [DetikHeadlineController::class, 'detikSport']);
+        Route::get('/oto', [DetikHeadlineController::class, 'detikOto']);
+        Route::get('/travel', [DetikHeadlineController::class, 'detikTravel']);
+        Route::get('/food', [DetikHeadlineController::class, 'detikFood']);
+        Route::get('/health', [DetikHeadlineController::class, 'detikHealth']);
+        Route::get('/wolipop', [DetikHeadlineController::class, 'detikWolipop']);
+        Route::get('/20', [DetikHeadlineController::class, 'detik20']);
     });
     Route::prefix('kompas')->group(function (){
-        Route::get('/news', [HeadlineController::class, 'kompasNews']);
-        Route::get('/tren', [HeadlineController::class, 'kompasTren']);
-        Route::get('/health', [HeadlineController::class, 'kompasHealth']);
-        Route::get('/food', [HeadlineController::class, 'kompasFood']);
-        Route::get('/edukasi', [HeadlineController::class, 'kompasEdukasi']);
-        Route::get('/parapuan', [HeadlineController::class, 'kompasParapuan']);
-        Route::get('/money', [HeadlineController::class, 'kompasMoney']);
-        Route::get('/umkm', [HeadlineController::class, 'kompasUMKM']);
-        Route::get('/tekno', [HeadlineController::class, 'kompasTekno']);
-        Route::get('/lifestyle', [HeadlineController::class, 'kompasLifestyle']);
-        Route::get('/homey', [HeadlineController::class, 'kompasHomey']);
-        Route::get('/properti', [HeadlineController::class, 'kompasProperti']);
-        Route::get('/bola', [HeadlineController::class, 'kompasBola']);
-        Route::get('/otomotif', [HeadlineController::class, 'kompasOtomotif']);
-        Route::get('/sains', [HeadlineController::class, 'kompasSains']);
-        Route::get('/hype', [HeadlineController::class, 'kompasHype']);
-        Route::get('/kolom', [HeadlineController::class, 'kompasKolom']);
-        Route::get('/foto', [HeadlineController::class, 'kompasFoto']);
+        Route::get('/news', [KompasHeadlineController::class, 'kompasNews']);
+        Route::get('/tren', [KompasHeadlineController::class, 'kompasTren']);
+        Route::get('/health', [KompasHeadlineController::class, 'kompasHealth']);
+        Route::get('/food', [KompasHeadlineController::class, 'kompasFood']);
+        Route::get('/edukasi', [KompasHeadlineController::class, 'kompasEdukasi']);
+        Route::get('/parapuan', [KompasHeadlineController::class, 'kompasParapuan']);
+        Route::get('/money', [KompasHeadlineController::class, 'kompasMoney']);
+        Route::get('/umkm', [KompasHeadlineController::class, 'kompasUMKM']);
+        Route::get('/tekno', [KompasHeadlineController::class, 'kompasTekno']);
+        Route::get('/lifestyle', [KompasHeadlineController::class, 'kompasLifestyle']);
+        Route::get('/homey', [KompasHeadlineController::class, 'kompasHomey']);
+        Route::get('/properti', [KompasHeadlineController::class, 'kompasProperti']);
+        Route::get('/bola', [KompasHeadlineController::class, 'kompasBola']);
+        Route::get('/otomotif', [KompasHeadlineController::class, 'kompasOtomotif']);
+        Route::get('/sains', [KompasHeadlineController::class, 'kompasSains']);
+        Route::get('/hype', [KompasHeadlineController::class, 'kompasHype']);
+        Route::get('/kolom', [KompasHeadlineController::class, 'kompasKolom']);
+        Route::get('/foto', [KompasHeadlineController::class, 'kompasFoto']);
 
     });
 });
