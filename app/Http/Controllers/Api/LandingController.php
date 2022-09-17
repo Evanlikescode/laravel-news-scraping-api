@@ -53,6 +53,16 @@ class LandingController extends Controller
                         'getHeadlineFoto' => '/api/headline/kompas/foto',
                         'getHeadlinesearchNews'  => null
                     ],
+                    'bbc' => [
+                        'getHeadlineGeneral' => '/api/headline/bbc/general',
+                        'getHeadlineNews' => '/api/headline/bbc/news',
+                        'getHeadlineSport' => '/api/headline/bbc/sport',
+                        'getHeadlineWorklife' => '/api/headline/bbc/worklife' ,
+                        'getHeadlineTravel' => '/api/headline/bbc/travel',
+                        'getHeadlineFuture' => '/api/headline/bbc/future',
+                        'getHeadlineCulture' => '/api/headline/bbc/culture',
+                        'getHeadlinesearchNews'  => null
+                    ],
                 ]
                 
                 

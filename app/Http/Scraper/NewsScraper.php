@@ -12,11 +12,19 @@ class NewsScraper{
     public function getHeadline($sourceData){
         $crawler = $this->client->request('GET', $sourceData['webSource']);
         $data = $crawler->filter($sourceData['headlineSource']);
-        $obj = $data->each(function ($node) {
-            $response = [
-                "Title" => $node->text(),
-                "Link" => $node->attr('href'),
-            ];
+        $obj = $data->each(function ($node) use ($sourceData) {
+            if(count($sourceData) > 2){
+                $response = [
+                    "Title" => $node->text(),
+                    "Link" => "{$sourceData['headlineWeb']}{$node->attr('href')}",
+                ];
+            }else{
+                $response = [
+                    "Title" => $node->text(),
+                    "Link" => $node->attr('href'),
+                ];
+            }
+          
             return $response;
         });
         return $obj;  

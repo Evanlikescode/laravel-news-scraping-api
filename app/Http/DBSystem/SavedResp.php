@@ -10,7 +10,7 @@ class SavedResp{
         }
         $newData = [];
         foreach($data as $x){
-            if($x['Link'] != "#" && $x['Link'] != null){
+            if($x['Title'] != null && $x['Link'] != "#" && $x['Link'] != null){
                 array_push(
                     $newData,array(
                     "Headline" => $x['Title'],
