@@ -9,17 +9,17 @@ class DetikHeadlineTest extends TestCase
 {
     
     const detikBaseUrl = [
-        'News' => '/api/headline/detik/news',
-        'Finance' => '/api/headline/detik/finance',
-        'Hot' => '/api/headline/detik/hot',
-        'Inet' => '/api/headline/detik/inet',
-        'Sport' => '/api/headline/detik/sport',
-        'Oto' => '/api/headline/detik/oto',
-        'Travel' => '/api/headline/detik/travel', 
-        'Food' => '/api/headline/detik/food',
-        'Health' => '/api/headline/detik/health', 
-        'Wolipop' => '/api/headline/detik/wolipop', 
-        '20Detik' => '/api/headline/detik/20',
+        'News' => '/headline/detik/news',
+        'Finance' => '/headline/detik/finance',
+        'Hot' => '/headline/detik/hot',
+        'Inet' => '/headline/detik/inet',
+        'Sport' => '/headline/detik/sport',
+        'Oto' => '/headline/detik/oto',
+        'Travel' => '/headline/detik/travel', 
+        'Food' => '/headline/detik/food',
+        'Health' => '/headline/detik/health', 
+        'Wolipop' => '/headline/detik/wolipop', 
+        '20Detik' => '/headline/detik/20',
     ];
 
     const resultExpected = [

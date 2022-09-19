@@ -9,7 +9,7 @@ class SearchTest extends TestCase
 {
     
     const baseUrl = [
-        'detikSearch' => '/api/search/detik/bola',
+        'detikSearch' => '/search/detik/bola',
     ];
 
     const resultExpected = [

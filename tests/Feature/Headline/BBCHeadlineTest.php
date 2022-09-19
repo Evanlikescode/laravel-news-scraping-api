@@ -9,13 +9,13 @@ class BBCHeadlineTest extends TestCase
 {
     
     const bbcBaseUrl = [
-        'General' => '/api/headline/bbc/general',
-        'News' => '/api/headline/bbc/news',
-        'Sport' => '/api/headline/bbc/sport',
-        'Worklife' => '/api/headline/bbc/worklife',
-        'Travel' => '/api/headline/bbc/travel',
-        'Future' => '/api/headline/bbc/future',
-        'Culture' => '/api/headline/bbc/culture',
+        'General' => '/headline/bbc/general',
+        'News' => '/headline/bbc/news',
+        'Sport' => '/headline/bbc/sport',
+        'Worklife' => '/headline/bbc/worklife',
+        'Travel' => '/headline/bbc/travel',
+        'Future' => '/headline/bbc/future',
+        'Culture' => '/headline/bbc/culture',
     ];
 
     const resultExpected = [
