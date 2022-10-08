@@ -12,72 +12,44 @@ class BBCHeadlineController extends Controller
         'General' => [
             'webSource' => "https://bbc.com/",
             'headlineSource' => ".block-link__overlay-link",
-            'headlineWeb' => "https://www.bbc.com",
-            'headlineWeb_2' => "https://www.bbc.co.uk",
-            'routeFirst_1' => 19,
-            'routeFirst_2' => 19,
-            'routeSecond_1' => 19,
-            'routeSecond_2' => 21
+            'headlineWeb' => ['https://www.bbc.com','https://www.bbc.co.uk'],
+            'route' => [19,19,19,21],
         ],
         'News' => [
             'webSource' => "https://bbc.com/news",
             'headlineSource' => ".gs-c-promo-heading",
-            'headlineWeb' => "https://www.bbc.com",
-            'headlineWeb_2' => "https://www.bbc.co.uk",
-            'routeFirst_1' => 19,
-            'routeFirst_2' => 19,
-            'routeSecond_1' => 19,
-            'routeSecond_2' => 21
+            'headlineWeb' => ['https://www.bbc.com','https://www.bbc.co.uk'],
+            'route' => [19,19,19,21],
         ],
         'Sport' => [
             'webSource' => "https://bbc.com/sport",
             'headlineSource' => ".ssrcss-1j8184x-PromoLink",
-            'headlineWeb' => "https://www.bbc.com",
-            'headlineWeb_2' => "https://www.bbc.co.uk",
-            'routeFirst_1' => 19,
-            'routeFirst_2' => 19,
-            'routeSecond_1' => 19,
-            'routeSecond_2' => 21
+            'headlineWeb' => ['https://www.bbc.com','https://www.bbc.co.uk'],
+            'route' => [19,19,19,21],
         ],
         'Worklife' => [
             'webSource' => "https://bbc.com/worklife",
             'headlineSource' => ".rectangle-story-item__title",
-            'headlineWeb' => "https://www.bbc.com",
-            'headlineWeb_2' => "https://www.bbc.co.uk",
-            'routeFirst_1' => 19,
-            'routeFirst_2' => 19,
-            'routeSecond_1' => 19,
-            'routeSecond_2' => 21
+            'headlineWeb' => ['https://www.bbc.com','https://www.bbc.co.uk'],
+            'route' => [19,19,19,21],
         ],
         'Travel' => [
             'webSource' => "https://bbc.com/travel",
             'headlineSource' => ".rectangle-story-item__title",
-            'headlineWeb' => "https://www.bbc.com",
-            'headlineWeb_2' => "https://www.bbc.co.uk",
-            'routeFirst_1' => 19,
-            'routeFirst_2' => 19,
-            'routeSecond_1' => 19,
-            'routeSecond_2' => 21
+            'headlineWeb' => ['https://www.bbc.com','https://www.bbc.co.uk'],
+            'route' => [19,19,19,21],
         ],
         'Future' => [
             'webSource' => "https://bbc.com/future",
             'headlineSource' => ".rectangle-story-item__title",
-            'headlineWeb' => "https://www.bbc.com",
-            'headlineWeb_2' => "https://www.bbc.co.uk",
-            'routeFirst_1' => 19,
-            'routeFirst_2' => 19,
-            'routeSecond_1' => 19,
-            'routeSecond_2' => 21
+            'headlineWeb' => ['https://www.bbc.com','https://www.bbc.co.uk'],
+            'route' => [19,19,19,21],
         ],
         'Culture' => [
             'webSource' => "https://bbc.com/culture",
             'headlineSource' => ".rectangle-story-item__title",
-            'headlineWeb' => "https://www.bbc.com",
-            'headlineWeb_2' => "https://www.bbc.co.uk",
-            'routeFirst_1' => 19,
-            'routeFirst_2' => 19,
-            'routeSecond_1' => 19,
-            'routeSecond_2' => 21
+            'headlineWeb' => ['https://www.bbc.com','https://www.bbc.co.uk'],
+            'route' => [19,19,19,21],
         ],
         
     ];

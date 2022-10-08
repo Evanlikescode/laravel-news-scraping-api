@@ -14,20 +14,21 @@ class NewsScraper{
         $data = $crawler->filter($sourceData['headlineSource']);
         $obj = $data->each(function ($node) use ($sourceData) {
             if(count($sourceData) > 2){
-                
+                // dd($res);
+
                 $response = [
                     "Title" => $node->text(),
-                    "Link" => "{$sourceData['headlineWeb']}{$node->attr('href')}",
+                    "Link" => "{$sourceData['headlineWeb'][0]}{$node->attr('href')}",
+                    "Status" => "route",
+                    "HeadlineWeb" => $sourceData['headlineWeb'],
+                    "Route" => $sourceData["route"],
+                    "realHref" => $node->attr('href'),
                 ];
-                $route = substr($response["Link"], $sourceData["routeFirst_1"], $sourceData["routeFirst_2"]);
-                $route_2 = substr($response["Link"], $sourceData['routeSecond_1'], $sourceData["routeSecond_2"]);
-                if( $route == $sourceData['headlineWeb'] || $route_2 == $sourceData['headlineWeb_2']){
-                    $response["Link"] = $node->attr('href');
-                }
             }else{
                 $response = [
                     "Title" => $node->text(),
                     "Link" => $node->attr('href'),
+                    "Status" => "non-route",
                 ];
             }
           
